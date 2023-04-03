@@ -1,11 +1,11 @@
-FROM node:17 as build
+FROM node:16 as build
 RUN mkdir /usr/src/app
 WORKDIR /usr/src/app
 ENV PATH /usr/src/app/node_modules/.bin:$PATH
 
 COPY package.json package.json
 COPY package-lock.json package-lock.json
-RUN npm ci
+RUN npm install
 
 COPY public/ public
 COPY src/ src
