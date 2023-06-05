@@ -1,15 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-import {
-  Box,
-  Divider,
-  Typography,
-  Card,
-  CardContent,
-  CardActions,
-  Button,
-  Link
-} from '@mui/material';
+import Box from '@mui/material/Box';
+import Divider from '@mui/material/Divider';
+import Typography from '@mui/material/Typography';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import Button from '@mui/material/Button';
+import Link from '@mui/material/Link';
 
 const Header = styled(Typography)`
   padding-top: 1.5em;
@@ -44,6 +42,12 @@ const sites = [
     description: 'a little color matching game',
     url: 'https://color-guesser.usingthe.computer',
     github: 'https://github.com/jonh-a/color-guesser'
+  },
+  {
+    title: 'coordinates api',
+    description: 'generate random coordinates inside a given country',
+    url: 'https://coordinates.usingthe.computer',
+    github: 'https://github.com/jonh-a/coordinates-api'
   },
   {
     title: 'speedreader',
