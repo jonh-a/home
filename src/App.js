@@ -32,6 +32,18 @@ const AppCard = styled(Card)`
 
 const sites = [
   {
+    title: 'coordinates api',
+    description: 'generate random coordinates inside a given country',
+    url: 'https://coordinates.usingthe.computer',
+    github: 'https://github.com/jonh-a/coordinates-api'
+  },
+  {
+    title: 'chords',
+    description: 'chord voicing visualizer + synthesizer',
+    url: 'https://chords.usingthe.computer',
+    github: 'https://github.com/jonh-a/chords'
+  },
+  {
     title: 'age-gender-nationality-ify',
     description: 'get demographic stats for any first name',
     url: 'https://agn.usingthe.computer',
@@ -42,12 +54,6 @@ const sites = [
     description: 'a little color matching game',
     url: 'https://color-guesser.usingthe.computer',
     github: 'https://github.com/jonh-a/color-guesser'
-  },
-  {
-    title: 'coordinates api',
-    description: 'generate random coordinates inside a given country',
-    url: 'https://coordinates.usingthe.computer',
-    github: 'https://github.com/jonh-a/coordinates-api'
   },
   {
     title: 'speedreader',
@@ -102,7 +108,6 @@ const AppItem = ({ app }) => (
     </AppCard>
   </Flexbox>
 )
-
 
 const App = () => (
   <Box>
