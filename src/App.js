@@ -38,16 +38,27 @@ const sites = [
     github: 'https://github.com/jonh-a/coordinates-api'
   },
   {
+    title: 'capitals',
+    description: 'capital guessing game',
+    url: 'https://capitals.usingthe.computer/',
+    github: 'https://github.com/jonh-a/capitals'
+  },
+  {
     title: 'chords',
     description: 'chord voicing visualizer + synthesizer',
     url: 'https://chords.usingthe.computer',
     github: 'https://github.com/jonh-a/chords'
   },
   {
-    title: 'age-gender-nationality-ify',
-    description: 'get demographic stats for any first name',
-    url: 'https://agn.usingthe.computer',
-    github: 'https://github.com/jonh-a/age-gender-nationality-ify'
+    title: 'speedreader',
+    description: 'cli speedreading tool written in go',
+    github: 'https://github.com/jonh-a/speedreader'
+  },
+  {
+    title: 'fakeapi',
+    description: 'test data in a customizable format',
+    url: 'https://github.com/jonh-a/fakeapi',
+    github: 'https://github.com/jonh-a/fakeapi',
   },
   {
     title: 'color guesser',
@@ -56,9 +67,10 @@ const sites = [
     github: 'https://github.com/jonh-a/color-guesser'
   },
   {
-    title: 'speedreader',
-    description: 'cli speedreading tool written in go',
-    github: 'https://github.com/jonh-a/speedreader'
+    title: 'age-gender-nationality-ify',
+    description: 'get demographic stats for any first name',
+    url: 'https://agn.usingthe.computer',
+    github: 'https://github.com/jonh-a/age-gender-nationality-ify'
   },
   {
     title: 'infra',
