@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
@@ -53,6 +53,11 @@ const sites = [
     title: 'speedreader',
     description: 'cli speedreading tool written in go',
     github: 'https://github.com/jonh-a/speedreader'
+  },
+  {
+    title: 'cronometer analysis',
+    description: 'cli tool for analyzing cronometer data',
+    github: 'https://github.com/jonh-a/cronometer-analysis'
   },
   {
     title: 'fakeapi',
@@ -121,26 +126,52 @@ const AppItem = ({ app }) => (
   </Flexbox>
 )
 
-const App = () => (
-  <Box>
-    <Header variant='h4'>There isn't much here.</Header>
+const App = () => {
+  const [randomSite, setRandomSite] = useState(() => {
+    const site = sites[Math.floor(Math.random() * sites.length)]
+    return site.url || site.github
+  })
 
-    <Divider />
+  const pickRandomSite = () => {
+    const site = sites[Math.floor(Math.random() * sites.length)]
+    const newSite = site.url || site.github
+    setRandomSite(newSite)
+    return newSite
+  }
 
-    <Flexbox>
-      <Flexbox sx={{ width: '100%', padding: '1em' }}>
-        <Typography variant='h6'>
-          Try one of these instead:
-        </Typography>
+  return (
+    <Box>
+      <Header variant='h4'>There isn't much here.</Header>
+
+      <Divider />
+
+      <Flexbox>
+        <Flexbox sx={{ width: '100%', padding: '1em' }}>
+          <Typography variant='h6'>
+            {'Try one of these instead or '}
+            <Link
+              href={randomSite}
+              onClick={(e) => {
+                e.preventDefault()
+                const newSite = pickRandomSite()
+                window.open(newSite, '_blank', 'noopener,noreferrer')
+              }}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              pick one at random
+            </Link>:
+          </Typography>
+        </Flexbox>
+
+        <Flexbox sx={{ width: '100%' }}>
+          {sites.map(i => (
+            <AppItem app={i} />
+          ))}
+        </Flexbox>
       </Flexbox>
-
-      <Flexbox sx={{ width: '100%' }}>
-        {sites.map(i => (
-          <AppItem app={i} />
-        ))}
-      </Flexbox>
-    </Flexbox>
-  </Box>
-)
+    </Box>
+  )
+}
 
 export default App
