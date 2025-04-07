@@ -20,14 +20,16 @@ const Flexbox = styled(Box)`
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  gap: 1em;
+  padding: 0 1em;
 `
 
 const AppCard = styled(Card)`
-  width: 30em;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
+  width: 100%;
+  max-width: 30em;
+  margin: 0.5em;
+  padding: 0.5em;
+  flex: 1 1 30em;
 `
 
 const sites = [
@@ -85,45 +87,43 @@ const sites = [
 ]
 
 const AppItem = ({ app }) => (
-  <Flexbox sx={{ width: '100%' }}>
-    <AppCard>
-      <CardContent>
-        <Typography variant='h5' component='div'>
-          {app.title}
-        </Typography>
+  <AppCard>
+    <CardContent>
+      <Typography variant='h5' component='div'>
+        {app.title}
+      </Typography>
 
-        <Typography varaint='body2'>
-          {app.description}
-        </Typography>
-      </CardContent>
+      <Typography varaint='body2'>
+        {app.description}
+      </Typography>
+    </CardContent>
 
-      <CardActions>
-        {app?.url && (
-          <Link
-            href={app?.url}
-            underline='none'
-            rel="noopener"
-            target="_blank"
-          >
-            <Button size="small">
-              View Site
-            </Button>
-          </Link>
-        )}
+    <CardActions>
+      {app?.url && (
+        <Link
+          href={app?.url}
+          underline='none'
+          rel="noopener"
+          target="_blank"
+        >
+          <Button size="small">
+            View Site
+          </Button>
+        </Link>
+      )}
 
-        {app?.github && (
-          <Link
-            href={app?.github}
-            underline='none'
-            rel="noopener"
-            target="_blank"
-          >
-            <Button size="small">View Github</Button>
-          </Link>
-        )}
-      </CardActions>
-    </AppCard>
-  </Flexbox>
+      {app?.github && (
+        <Link
+          href={app?.github}
+          underline='none'
+          rel="noopener"
+          target="_blank"
+        >
+          <Button size="small">View Github</Button>
+        </Link>
+      )}
+    </CardActions>
+  </AppCard>
 )
 
 const App = () => {
@@ -165,8 +165,8 @@ const App = () => {
         </Flexbox>
 
         <Flexbox sx={{ width: '100%' }}>
-          {sites.map(i => (
-            <AppItem app={i} />
+          {sites.map((i, index) => (
+            <AppItem key={index} app={i} />
           ))}
         </Flexbox>
       </Flexbox>
